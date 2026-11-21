@@ -1,0 +1,23 @@
+# secrets and environments
+.env
+secrets/
+.venv/
+
+# raw and derived data (hundreds of MB to 34 GB); see README "Data bundle" and the Drive folder fdasearch_data_v2
+data/
+bundle/
+bundle_emb_cache/
+*.log
+
+# large run artifacts; metrics.csv and REPORT.md are kept
+results/emb/
+results/top/
+results/ranks/
+results_v1/ranks/
+results_v1/top/
+results/reference/
+
+# python / editor
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

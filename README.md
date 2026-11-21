@@ -209,3 +209,11 @@ scripts/   gcp_create_vm.sh  vm_setup.sh  vm_startup.sh  run_probe.sh  run_pilot
 tests/     knumbers, sections, predicates, leakage, tokens/metrics, PDF round-trip, probe + OCR stress, fetch, synthetic pipeline, labeling, pilot end-to-end
            real_pdfs/ (drop real PDFs here; see its README)
 ```
+
+## fdasearch/ — zero-shot retrieval baselines and a Drive-backed Colab
+
+`fdasearch/` is a companion pipeline (PyMuPDF + GPU OCR extraction, closure fetch, leak-controlled dataset build
+with a `predx`-layout export) plus 16 untuned retrieval baselines (TF-IDF, BM25, LSA, nine dense embedders, Gemini,
+RRF hybrids) scored with bootstrap CIs on 49,238 510(k) summaries. See `fdasearch/README.md` for the results table
+and `fdasearch/notebooks/fdasearch_510k_baselines.ipynb` for a Colab that reruns everything from a data bundle on
+Google Drive.
