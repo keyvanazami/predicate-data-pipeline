@@ -1,0 +1,100 @@
+{"k": "K252501", "regex_predicates": ["K230566"], "regex_references": [], "llm_predicates": ["K230566"], "llm_references": [], "seconds": 12.3}
+{"k": "K260184", "regex_predicates": ["DEN240045", "P160037"], "regex_references": [], "llm_predicates": [], "llm_references": [], "seconds": 4.9}
+{"k": "K251880", "regex_predicates": ["K112974"], "regex_references": [], "llm_predicates": ["K112974"], "llm_references": [], "seconds": 5.7}
+{"k": "K243037", "regex_predicates": ["K212734", "K240747", "K240644"], "regex_references": [], "llm_predicates": ["K212734", "K240644", "K240747"], "llm_references": [], "seconds": 7.5}
+{"k": "K261758", "regex_predicates": ["K254277"], "regex_references": [], "llm_predicates": ["K254277"], "llm_references": [], "seconds": 5.2}
+{"k": "K261200", "regex_predicates": ["K242448"], "regex_references": [], "llm_predicates": ["K242448"], "llm_references": [], "seconds": 6.1}
+{"k": "K240664", "regex_predicates": ["K131157", "K190163"], "regex_references": [], "llm_predicates": ["K131157", "K190163"], "llm_references": [], "seconds": 5.6}
+{"k": "K250228", "regex_predicates": ["K230768"], "regex_references": [], "llm_predicates": ["K230768"], "llm_references": [], "seconds": 6.0}
+{"k": "K260974", "regex_predicates": ["K201109"], "regex_references": [], "llm_predicates": [], "llm_references": [], "seconds": 7.1}
+{"k": "K252067", "regex_predicates": ["K190904", "K243977", "K190660", "K231178", "K192198"], "regex_references": [], "llm_predicates": ["K190660", "K190904", "K243977"], "llm_references": [], "seconds": 7.0}
+{"k": "K243828", "regex_predicates": ["K221823", "K080950"], "regex_references": [], "llm_predicates": ["K080950", "K221823"], "llm_references": [], "seconds": 6.8}
+{"k": "K261582", "regex_predicates": ["K161892", "K122579"], "regex_references": [], "llm_predicates": ["K122579", "K161892"], "llm_references": [], "seconds": 6.7}
+{"k": "K240059", "regex_predicates": ["K102973"], "regex_references": [], "llm_predicates": ["K102973"], "llm_references": [], "seconds": 6.4}
+{"k": "K250536", "regex_predicates": ["K153182", "K150772"], "regex_references": [], "llm_predicates": ["K150772", "K153182"], "llm_references": [], "seconds": 4.5}
+{"k": "K253751", "regex_predicates": ["K211733"], "regex_references": [], "llm_predicates": ["K211733"], "llm_references": [], "seconds": 5.2}
+{"k": "K261812", "regex_predicates": ["K223397"], "regex_references": [], "llm_predicates": ["K223397"], "llm_references": [], "seconds": 6.3}
+{"k": "K261132", "regex_predicates": ["K243226"], "regex_references": [], "llm_predicates": ["K243226"], "llm_references": [], "seconds": 5.6}
+{"k": "K251280", "regex_predicates": ["K212538"], "regex_references": ["K143353", "K242340", "K212628", "K240208", "K222288", "K191986", "K170588", "K243212", "K233316", "K120414", "K111287", "K042429", "K071638", "K180282", "K142260", "K173418", "K140878", "K210499"], "llm_predicates": ["K212538"], "llm_references": ["K042429", "K071638", "K111287", "K120414", "K140878", "K142260", "K143353", "K170588", "K173418", "K180282", "K191986", "K210499", "K212628", "K222288", "K233316", "K240208", "K242340", "K243212"], "seconds": 23.7}
+{"k": "K251507", "regex_predicates": ["K201623"], "regex_references": [], "llm_predicates": ["K201623"], "llm_references": [], "seconds": 6.0}
+{"k": "K261336", "regex_predicates": ["K233100"], "regex_references": [], "llm_predicates": ["K233100"], "llm_references": [], "seconds": 5.5}
+{"k": "K253502", "regex_predicates": ["K211161"], "regex_references": [], "llm_predicates": ["K211161"], "llm_references": [], "seconds": 5.3}
+{"k": "K261081", "regex_predicates": [], "regex_references": ["K241979", "K253448"], "llm_predicates": ["K241979"], "llm_references": ["K253448"], "seconds": 6.2}
+{"k": "K250086", "regex_predicates": ["K232140", "K231503"], "regex_references": [], "llm_predicates": ["K232140"], "llm_references": ["K231503"], "seconds": 6.2}
+{"k": "K251406", "regex_predicates": ["K222329"], "regex_references": ["K243548"], "llm_predicates": ["K222329"], "llm_references": ["K243548"], "seconds": 6.0}
+{"k": "K261693", "regex_predicates": ["K242951"], "regex_references": [], "llm_predicates": ["K242951"], "llm_references": [], "seconds": 5.6}
+{"k": "K240333", "regex_predicates": ["K222588"], "regex_references": [], "llm_predicates": ["K222588"], "llm_references": [], "seconds": 5.6}
+{"k": "K243946", "regex_predicates": [], "regex_references": [], "llm_predicates": ["K241657", "K241892"], "llm_references": [], "seconds": 4.5}
+{"k": "K260532", "regex_predicates": ["K182838", "K171842"], "regex_references": [], "llm_predicates": ["K171842", "K182838"], "llm_references": [], "seconds": 7.3}
+{"k": "K253678", "regex_predicates": ["K233539"], "regex_references": [], "llm_predicates": ["K233539"], "llm_references": [], "seconds": 6.6}
+{"k": "K243268", "regex_predicates": ["K220028", "K222579"], "regex_references": ["K231355"], "llm_predicates": ["K220028"], "llm_references": ["K222579", "K231355"], "seconds": 7.9}
+{"k": "K243280", "regex_predicates": ["K153743", "K163610", "K213221"], "regex_references": [], "llm_predicates": ["K153743"], "llm_references": ["K163610"], "seconds": 7.1}
+{"k": "K243826", "regex_predicates": [], "regex_references": ["K223876", "K100858", "K110598", "K142139", "K112898"], "llm_predicates": ["K223876"], "llm_references": ["K100858", "K110598", "K112898", "K142139"], "seconds": 9.7}
+{"k": "K261500", "regex_predicates": ["K223841", "K213975", "K211981"], "regex_references": [], "llm_predicates": ["K213975", "K223841"], "llm_references": [], "seconds": 6.7}
+{"k": "K243848", "regex_predicates": ["K242259"], "regex_references": [], "llm_predicates": ["K242259"], "llm_references": [], "seconds": 5.5}
+{"k": "K243710", "regex_predicates": ["K230748"], "regex_references": [], "llm_predicates": ["K230748"], "llm_references": [], "seconds": 6.1}
+{"k": "K251693", "regex_predicates": ["K142832"], "regex_references": [], "llm_predicates": ["K142832"], "llm_references": [], "seconds": 6.6}
+{"k": "K261719", "regex_predicates": ["K220129", "K262719"], "regex_references": [], "llm_predicates": ["K220129"], "llm_references": [], "seconds": 6.4}
+{"k": "K253721", "regex_predicates": ["K211981", "K232650", "K251804", "K240539"], "regex_references": [], "llm_predicates": [], "llm_references": [], "seconds": 8.3}
+{"k": "K261795", "regex_predicates": ["K241083", "K222359"], "regex_references": ["K253379"], "llm_predicates": [], "llm_references": [], "seconds": 12.3}
+{"k": "K244020", "regex_predicates": ["K240360"], "regex_references": [], "llm_predicates": ["K240360"], "llm_references": [], "seconds": 7.4}
+{"k": "K241116", "regex_predicates": ["K221363"], "regex_references": [], "llm_predicates": ["K221363"], "llm_references": [], "seconds": 6.7}
+{"k": "K260364", "regex_predicates": ["K071813", "K241802"], "regex_references": [], "llm_predicates": ["K071813"], "llm_references": ["K241802"], "seconds": 6.2}
+{"k": "K252923", "regex_predicates": ["K945826", "K990538", "K061148", "K191975"], "regex_references": [], "llm_predicates": ["K945826", "K990538"], "llm_references": ["K061148", "K191975"], "seconds": 11.8}
+{"k": "K251495", "regex_predicates": ["K193419", "K130831", "K142677", "K163536"], "regex_references": [], "llm_predicates": ["K193419"], "llm_references": [], "seconds": 5.5}
+{"k": "K260256", "regex_predicates": ["K190936", "K213569", "K202288"], "regex_references": [], "llm_predicates": ["K190936", "K202288", "K213569"], "llm_references": [], "seconds": 8.1}
+{"k": "K250134", "regex_predicates": ["K240638"], "regex_references": [], "llm_predicates": ["K240638"], "llm_references": [], "seconds": 6.6}
+{"k": "K260582", "regex_predicates": [], "regex_references": [], "llm_predicates": [], "llm_references": [], "seconds": 6.1}
+{"k": "K243891", "regex_predicates": ["K230337"], "regex_references": [], "llm_predicates": ["K230337"], "llm_references": [], "seconds": 5.8}
+{"k": "K252676", "regex_predicates": ["K234003", "K150272", "K182030"], "regex_references": [], "llm_predicates": ["K234003"], "llm_references": [], "seconds": 5.8}
+{"k": "K243921", "regex_predicates": ["K220826", "K220471"], "regex_references": ["K221194", "K221152"], "llm_predicates": ["K220471", "K220826"], "llm_references": ["K221152", "K221194"], "seconds": 9.0}
+{"k": "K240807", "regex_predicates": ["K083688", "K181166", "K202970"], "regex_references": [], "llm_predicates": ["K083688", "K181166"], "llm_references": ["K202970"], "seconds": 7.5}
+{"k": "K242693", "regex_predicates": ["K232316"], "regex_references": [], "llm_predicates": ["K232316"], "llm_references": [], "seconds": 5.8}
+{"k": "K254176", "regex_predicates": ["K220966"], "regex_references": [], "llm_predicates": ["K220966"], "llm_references": [], "seconds": 4.6}
+{"k": "K260844", "regex_predicates": ["K251481"], "regex_references": ["K233613"], "llm_predicates": ["K251481"], "llm_references": ["K233613"], "seconds": 6.5}
+{"k": "K243840", "regex_predicates": ["K080432"], "regex_references": ["K191006"], "llm_predicates": ["K080432"], "llm_references": ["K191006"], "seconds": 7.1}
+{"k": "K243888", "regex_predicates": ["K231885", "K234031", "K241359", "K211612"], "regex_references": [], "llm_predicates": ["K211612", "K231885", "K234031", "K241359"], "llm_references": [], "seconds": 8.5}
+{"k": "K243180", "regex_predicates": [], "regex_references": [], "llm_predicates": [], "llm_references": [], "seconds": 5.5}
+{"k": "K254045", "regex_predicates": ["K252327", "K233989", "K163375"], "regex_references": ["K240846", "K243106"], "llm_predicates": ["K163375", "K233989", "K252327"], "llm_references": ["K240846", "K243106"], "seconds": 11.0}
+{"k": "K251998", "regex_predicates": ["K131544"], "regex_references": [], "llm_predicates": ["K131544"], "llm_references": [], "seconds": 6.4}
+{"k": "K260946", "regex_predicates": ["K214103", "K251012"], "regex_references": ["K230293", "K240360", "K253073", "K242382"], "llm_predicates": ["K214103", "K251012"], "llm_references": ["K230293", "K240360", "K242382", "K253073"], "seconds": 11.4}
+{"k": "K250039", "regex_predicates": ["K231662"], "regex_references": [], "llm_predicates": ["K231662"], "llm_references": [], "seconds": 6.6}
+{"k": "K242322", "regex_predicates": ["K171531"], "regex_references": [], "llm_predicates": ["K171531"], "llm_references": [], "seconds": 6.0}
+{"k": "K261569", "regex_predicates": ["K200690", "K163512"], "regex_references": ["K242018"], "llm_predicates": ["K163512", "K200690"], "llm_references": ["K242018"], "seconds": 7.5}
+{"k": "K243957", "regex_predicates": ["K210226"], "regex_references": [], "llm_predicates": ["K210226"], "llm_references": [], "seconds": 6.5}
+{"k": "K261683", "regex_predicates": ["K241043"], "regex_references": [], "llm_predicates": ["K241043"], "llm_references": [], "seconds": 5.2}
+{"k": "K243412", "regex_predicates": ["K133700"], "regex_references": ["K013784"], "llm_predicates": ["K133700"], "llm_references": ["K013784"], "seconds": 6.7}
+{"k": "K253876", "regex_predicates": ["K222270", "K191243", "K151939", "K173115", "K231735"], "regex_references": [], "llm_predicates": ["K151939", "K173115", "K191243", "K222270", "K231735"], "llm_references": [], "seconds": 8.6}
+{"k": "K250664", "regex_predicates": ["K173054", "K222222"], "regex_references": [], "llm_predicates": ["K173054"], "llm_references": ["K222222"], "seconds": 6.2}
+{"k": "K242715", "regex_predicates": [], "regex_references": [], "llm_predicates": [], "llm_references": [], "seconds": 5.0}
+{"k": "K250250", "regex_predicates": ["K052407"], "regex_references": [], "llm_predicates": ["K052407"], "llm_references": [], "seconds": 6.4}
+{"k": "K251395", "regex_predicates": ["K161210"], "regex_references": [], "llm_predicates": ["K161210"], "llm_references": [], "seconds": 3.5}
+{"k": "K241492", "regex_predicates": ["K203618"], "regex_references": ["K182865", "K223662"], "llm_predicates": ["K203618"], "llm_references": ["K182865", "K223662"], "seconds": 7.6}
+{"k": "K252658", "regex_predicates": ["K212734"], "regex_references": ["K240179", "K082721"], "llm_predicates": ["K212734"], "llm_references": ["K082721", "K240179"], "seconds": 7.9}
+{"k": "K250996", "regex_predicates": ["K231481"], "regex_references": [], "llm_predicates": ["K231481"], "llm_references": [], "seconds": 6.1}
+{"k": "K251169", "regex_predicates": ["K200882"], "regex_references": ["K220882", "K223832", "K231989", "K243620", "K231965", "K181685", "K170823", "K200743"], "llm_predicates": ["K220882"], "llm_references": ["K170823", "K181685", "K200743", "K223832", "K231965", "K231989", "K243620"], "seconds": 12.3}
+{"k": "K252111", "regex_predicates": ["DEN230078"], "regex_references": ["K212808"], "llm_predicates": [], "llm_references": ["K212808"], "seconds": 5.2}
+{"k": "K252806", "regex_predicates": [], "regex_references": [], "llm_predicates": ["K243857"], "llm_references": ["K211169", "K233778"], "seconds": 6.7}
+{"k": "K253345", "regex_predicates": ["K202024", "K093591", "K112193", "K150568"], "regex_references": [], "llm_predicates": ["K093591", "K112193", "K150568", "K202024"], "llm_references": [], "seconds": 7.6}
+{"k": "K241253", "regex_predicates": ["K161548"], "regex_references": ["K951690", "K951691", "K961719"], "llm_predicates": ["K161548"], "llm_references": ["K951690", "K951691", "K961719"], "seconds": 8.4}
+{"k": "K254184", "regex_predicates": ["K241569"], "regex_references": [], "llm_predicates": ["K241569"], "llm_references": [], "seconds": 5.5}
+{"k": "K242498", "regex_predicates": ["K202567"], "regex_references": [], "llm_predicates": ["K202567"], "llm_references": [], "seconds": 6.7}
+{"k": "K241458", "regex_predicates": ["K042359", "K042349"], "regex_references": [], "llm_predicates": ["K042349", "K042359"], "llm_references": [], "seconds": 5.7}
+{"k": "K253401", "regex_predicates": ["K222270", "K221894", "K222082", "K243635", "K203714", "K220478", "K191100", "K211616", "K241525"], "regex_references": [], "llm_predicates": ["K203714", "K220478", "K221894", "K222082", "K222270", "K243635"], "llm_references": ["K191100", "K211616", "K241525"], "seconds": 12.9}
+{"k": "K261293", "regex_predicates": ["K201258"], "regex_references": [], "llm_predicates": ["K201258"], "llm_references": [], "seconds": 6.2}
+{"k": "K243750", "regex_predicates": ["K171886"], "regex_references": [], "llm_predicates": ["K171886"], "llm_references": [], "seconds": 6.1}
+{"k": "K252797", "regex_predicates": ["K043045", "K252792"], "regex_references": [], "llm_predicates": ["K043045"], "llm_references": [], "seconds": 5.5}
+{"k": "K250319", "regex_predicates": ["K240713", "K061079"], "regex_references": [], "llm_predicates": ["K240713"], "llm_references": ["K061079"], "seconds": 6.7}
+{"k": "K250680", "regex_predicates": ["DEN230036"], "regex_references": [], "llm_predicates": [], "llm_references": [], "seconds": 4.7}
+{"k": "K240666", "regex_predicates": ["K230640", "K191077"], "regex_references": [], "llm_predicates": ["K230640"], "llm_references": [], "seconds": 5.6}
+{"k": "K252312", "regex_predicates": [], "regex_references": [], "llm_predicates": ["K120493", "K183603", "K230744"], "llm_references": [], "seconds": 5.5}
+{"k": "K242134", "regex_predicates": ["K202616"], "regex_references": [], "llm_predicates": ["K202616"], "llm_references": [], "seconds": 5.7}
+{"k": "K251155", "regex_predicates": ["K220584", "K201075"], "regex_references": [], "llm_predicates": ["K220584"], "llm_references": [], "seconds": 6.1}
+{"k": "K253070", "regex_predicates": ["K213531"], "regex_references": [], "llm_predicates": ["K213531"], "llm_references": [], "seconds": 7.0}
+{"k": "K243509", "regex_predicates": ["K190738", "K223655", "K232583", "K213779"], "regex_references": ["K152825", "K173812", "K181287", "K182500", "K191811", "K222317", "K202611", "K211991", "K213349"], "llm_predicates": ["K190738"], "llm_references": ["K152825", "K173812", "K181287", "K182500", "K191811", "K202611", "K211991", "K213349", "K222317", "K223655", "K232583"], "seconds": 15.9}
+{"k": "K261183", "regex_predicates": ["K251859", "K183456", "K243502", "K233195", "K112680", "K121959", "K222584"], "regex_references": [], "llm_predicates": ["K251859"], "llm_references": ["K112680", "K121959", "K183456", "K222584", "K233195", "K243502"], "seconds": 11.5}
+{"k": "K260579", "regex_predicates": ["K203088", "K100941", "K221118", "K094012"], "regex_references": [], "llm_predicates": ["K203088"], "llm_references": [], "seconds": 5.7}
+{"k": "K250442", "regex_predicates": ["K232610"], "regex_references": [], "llm_predicates": ["K232610"], "llm_references": [], "seconds": 5.5}
+{"k": "K260064", "regex_predicates": ["DEN200069"], "regex_references": [], "llm_predicates": [], "llm_references": [], "seconds": 5.5}
+{"k": "K241784", "regex_predicates": ["K142393"], "regex_references": [], "llm_predicates": ["K142393"], "llm_references": [], "seconds": 6.0}
+{"k": "K252326", "regex_predicates": ["K031841", "K252236"], "regex_references": ["K172906"], "llm_predicates": ["K031841"], "llm_references": ["K172906"], "seconds": 4.6}
