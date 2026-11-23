@@ -1,12 +1,16 @@
-"""Zero-shot predicate retrieval baselines.
+"""Zero-shot predicate retrieval baselines on a predx build (see predx_dataset.py for the dataset contract).
 
-Usage: python run_baselines.py --methods bm25,lsa,pop,emb:BAAI/bge-base-en-v1.5,ollama:embeddinggemma [--pc]
+Usage: python run_baselines.py --methods bm25,lsa,pop,emb:BAAI/bge-base-en-v1.5,ollama:embeddinggemma [--pc] [--dataset DIR]
 Writes results/metrics.csv (appends) and results/ranks/{method}.json (rank of each positive per query).
+Candidates of a query = corpus[:n_candidates] (devices dated strictly before the subject), gold = gold_in_corpus
+(primary + additional predicates present in the corpus); `prim_*` columns score the primary predicate alone.
 """
 import argparse, json, os, re, sys, time, math
 import numpy as np, pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from predx_dataset import load_dataset
 RES = os.path.join(ROOT, "results")
 os.makedirs(os.path.join(RES, "ranks"), exist_ok=True)
 os.makedirs(os.path.join(RES, "emb"), exist_ok=True)
@@ -29,13 +33,6 @@ PROMPTS = {
 }
 OLLAMA_PROMPTS = {"embeddinggemma": ("task: search result | query: ", "title: none | text: "),
                   "nomic-embed-text": ("search_query: ", "search_document: ")}
-
-
-def load():
-    corpus = pd.read_parquet(os.path.join(ROOT, "data", "corpus.parquet"))
-    queries = pd.read_parquet(os.path.join(ROOT, "data", "queries.parquet"))
-    queries = queries[queries.split.isin(["dev", "test"])].reset_index(drop=True)  # train split is for fine-tuning only
-    return corpus, queries
 
 
 def embed_st(model_name, texts, is_query, batch=64, max_len=512):
@@ -131,8 +128,8 @@ def cached_embed(tag, fn, texts, keys, is_query, chunk=4000):
     p = os.path.join(RES, "emb", f"{tag}.{'q' if is_query else 'd'}.npz")
     have = {}
     if os.path.exists(p):
-        z = np.load(p, allow_pickle=False)
-        have = dict(zip(z["keys"].tolist(), z["vecs"]))
+        with np.load(p, allow_pickle=False) as z:  # close the file: Windows cannot replace an open one
+            have = dict(zip(z["keys"].tolist(), z["vecs"]))
     todo = [(k, t) for k, t in zip(keys, texts) if k not in have]
     if todo:
         print(f"  embedding {len(todo)} new of {len(texts)} ({len(have)} cached)", flush=True)
@@ -141,21 +138,23 @@ def cached_embed(tag, fn, texts, keys, is_query, chunk=4000):
             v = fn([t for _, t in part], is_query)
             for (k, _), vec in zip(part, v):
                 have[k] = vec
-            np.savez(p, keys=np.array(list(have.keys())), vecs=np.stack(list(have.values())))
+            tmp = p[:-4] + ".tmp.npz"  # write then rename, so an interrupted run cannot leave a truncated cache
+            np.savez(tmp, keys=np.array(list(have.keys())), vecs=np.stack(list(have.values())))
+            os.replace(tmp, p)
     return np.stack([have[k] for k in keys]).astype(np.float32)
 
 
 def evaluate(scores_fn, corpus, queries, method, pc_filter=False):
     """scores_fn(qi) -> np.array of scores over corpus rows (higher better)."""
     kidx = {k: i for i, k in enumerate(corpus.k)}
-    dates = corpus.date.values
     pcs = corpus.product_code.values
+    pos_idx = np.arange(len(corpus))
     rows = []
     rank_dump = {}
     top = np.full((len(queries), 100), -1, dtype=np.int32)
     for qi, q in enumerate(queries.itertuples()):
         s = np.asarray(scores_fn(qi), dtype=np.float64).copy()
-        valid = dates < q.date
+        valid = pos_idx < q.n_candidates  # predx: corpus sorted by date, candidates = rows dated before the subject
         if pc_filter:
             valid &= pcs == q.product_code
         s[~valid] = -np.inf
@@ -207,7 +206,7 @@ def bootstrap_ci(x, n=1000, seed=0):
 def summarize(df, method, note=""):
     out = []
     for split, g in df.groupby("split"):
-        rec = dict(method=method, split=split, n=len(g), note=note)
+        rec = dict(method=method, split=split, n=len(g), n_prim=int(g["prim_hit1"].notna().sum()), note=note)
         for c in ["recall10", "recall50", "hit1", "hit10", "hit100", "mrr", "prim_hit1", "prim_hit10", "prim_mrr"]:
             v = g[c].dropna()
             lo, hi = bootstrap_ci(v)
@@ -222,8 +221,10 @@ def main():
     ap.add_argument("--pc", action="store_true", help="also run each method restricted to subject's product code")
     ap.add_argument("--max-len", type=int, default=512)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--dataset", default=None, help="predx build directory (default: $PREDX_DATASET or data/dataset)")
+    ap.add_argument("--panel", default=None, help="restrict corpus and queries to one review panel code (quick runs)")
     a = ap.parse_args()
-    corpus, queries = load()
+    corpus, queries, pairs, card = load_dataset(a.dataset, panel=a.panel)
     if a.limit:
         queries = queries.sample(a.limit, random_state=0).reset_index(drop=True)
     print(f"corpus {len(corpus)} docs, {len(queries)} queries", flush=True)
@@ -251,13 +252,13 @@ def main():
             from sklearn.feature_extraction.text import TfidfVectorizer
             tv = TfidfVectorizer(sublinear_tf=True, min_df=2, max_df=0.5, stop_words="english", ngram_range=(1, 2))
             D = tv.fit_transform(doc_texts); Q = tv.transform(q_texts)
-            def fn(qi): return (Q[qi] @ D.T).toarray().ravel()
+            DT = D.T.tocsr()  # convert once: Q[qi] @ D.T re-converted the whole matrix on every query
+            def fn(qi, Q=Q, DT=DT): return (Q[qi] @ DT).toarray().ravel()
         elif spec == "pop":
-            # citation popularity within product code, counts from citing docs cleared before 2024
+            # citation popularity within product code (predx product_code_popularity): counts from the train pairs
             cnt = {}
-            for r in corpus.itertuples():
-                if r.date < "2024-01-01":
-                    for p in r.predicates: cnt[p] = cnt.get(p, 0) + 1
+            for pr in pairs:
+                cnt[pr["p"]] = cnt.get(pr["p"], 0) + 1
             base = np.array([cnt.get(k, 0) for k in corpus.k], dtype=float)
             recency = np.argsort(np.argsort(corpus.date.values)) / len(corpus)  # tie-break by recency
             pcs = corpus.product_code.values
