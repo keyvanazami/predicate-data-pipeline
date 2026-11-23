@@ -209,6 +209,8 @@ if HF_TOKEN:
 import transformers; print("transformers", transformers.__version__, "(EmbeddingGemma needs >= 4.56)")
 if GEMINI_API_KEY:
     open("fdasearch/.env", "w").write(f"GEMINI_API_KEY={GEMINI_API_KEY}\\n")
+for stale in ["fdasearch/results/metrics.csv", "fdasearch/results/REPORT.md"]:   # the repo ships the full-run numbers; start this run clean
+    if os.path.exists(stale): os.remove(stale)
 BASE = f"python fdasearch/scripts/run_baselines.py --dataset data/dataset {panel_arg}"
 
 sh(f"{BASE} --pc --methods random,pop,bm25,tfidf,lsa")
