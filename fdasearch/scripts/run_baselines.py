@@ -31,6 +31,19 @@ PROMPTS = {
     "Snowflake/snowflake-arctic-embed-m-v2.0": ("query: ", ""),
     "google/embeddinggemma-300m": ("task: search result | query: ", "title: none | text: "),
 }
+def prompts_for(model_name):
+    """(query prefix, document prefix). A local fine-tuned checkpoint keeps its base model's prompts: the base is
+    matched by its short name appearing in the path (models/eg300m-ft/final -> embeddinggemma via train_config.json)."""
+    if model_name in PROMPTS:
+        return PROMPTS[model_name]
+    cfg = os.path.join(os.path.dirname(os.path.normpath(model_name)), "train_config.json")
+    for c in (cfg, os.path.join(model_name, "train_config.json")):
+        if os.path.exists(c):
+            base = json.load(open(c)).get("model") or ""
+            return prompts_for(base) if base != model_name else ("", "")
+    return ("", "")
+
+
 OLLAMA_PROMPTS = {"embeddinggemma": ("task: search result | query: ", "title: none | text: "),
                   "nomic-embed-text": ("search_query: ", "search_document: ")}
 
@@ -44,7 +57,7 @@ def embed_st(model_name, texts, is_query, batch=64, max_len=512):
         kw["model_kwargs"] = {"torch_dtype": torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float32}
     m = SentenceTransformer(model_name, device="cuda", **kw)
     m.max_seq_length = max_len
-    qp, dp = PROMPTS.get(model_name, ("", ""))
+    qp, dp = prompts_for(model_name)
     pre = qp if is_query else dp
     out = m.encode([pre + t for t in texts], batch_size=batch, normalize_embeddings=True,
                    show_progress_bar=True, convert_to_numpy=True)
